@@ -13,36 +13,82 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  
+  background-color: #aabdbb;
 }
 
 .App-header {
+  background-color: #424c58;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  width: 100%;
+}
 
+h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #bab194;
 }
 
 .Game-image {
 
-}
-
-.gameboard {
 
 }
 
-.scoreboard {
+.Game-board {
+  border-style: solid;
+  border-color: #ff5722;
+  width: 73%;
+  float: left;
+  margin: 2%;
 
 }
 
-.controls {
+.Scoreboard {
+  border-style: solid;
+  border-color: #ff5722;
+  width: 23%;
+  float: left;
+  margin: 2%;
+}
 
+.Row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.Chat-box {
+  border-style: solid;
+  border-color: #ff5722;
+  width: 73%;
+  float: left;
+  margin: 2%
+}
+
+.Controls {
+  border-style: solid;
+  border-color: #ff5722;
+  width: 23%;
+  float: left;
+  margin: 2%;
 }
 
 .App-footer {
-
+  background-color: #424c58;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
 }
 
-.Repo-link {
-
+.Repo-link:link {
+  color: #aabdbb;
 }
 
-
+.Repo-link:hover {
+  color: #ff5722;
+}
