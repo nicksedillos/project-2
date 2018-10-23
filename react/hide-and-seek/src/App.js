@@ -1,38 +1,35 @@
 import React, { Component } from 'react';
-import gameboardImage from '#'; //image path placeholder
+//import gameboardImage from '/placeholder-image.jpg'; //image path placeholder
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>
-            Hide-and-Seek
-          </h1>
-        </header>
-
-        <div className="Game-image">
-          <img src={gameboardImage} className="gameboard" alt="gameboard" />
-        </div>
-
-        <div className="scoreboard"></div>
-
-        <div className="chatbox"></div>
-
-        <div className="controls"></div>
-
-        <div className="App-footer">
-        <a
-            className="Repo-link"
-            href="https://github.com/nicksedillos/project-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View the code on Github
-          </a>
-        </div>
-
-      </div>
+    <Container className="App">
+    <Navbar light expand="md" className="App-header"><NavbarBrand>Hide-and-Seek</NavbarBrand></Navbar> 
+    <Row>
+      <Col xs="6" sm="4" className="Scoreboard"><h2>Scoreboard:</h2></Col>
+      <Col className="Game-board">
+        <h2>The game board image will go here.</h2>
+        {/* <img src={gameboardImage} className="Game-image" alt="gameboard" /> */}
+      </Col>
+    </Row>
+    <Row>
+      <Col className="Chat-box"><h2>Game Chat:</h2></Col>
+      <Col xs="6" sm="4" className="Controls"><h2>Controls:</h2></Col>
+    </Row>
+    <Navbar color="light" light expand="md" className="App-footer"><NavbarBrand>        
+      <a
+        className="Repo-link"
+        href="https://github.com/nicksedillos/project-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View the code on Github</a>
+    </NavbarBrand></Navbar>
+    </Container>
     );
   }
 }
