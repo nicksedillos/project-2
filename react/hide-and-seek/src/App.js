@@ -5,7 +5,16 @@ import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand } from 'reactstrap';
 
 class App extends Component {
+  componentDidMount() {
+    fetch('/api/chat')
+      .then((chatInfo) => {
+        this.setState({ chatInfo });
+      })
+  }
   render() {
+    const { chatInfo } = this.state;
+    const chatMessages = chatInfo.map((message, i) => <p key={i}>{message}</p>);
+    
     return (
     <Container className="App">
     <Navbar light expand="md" className="App-header"><NavbarBrand>Hide-and-Seek</NavbarBrand></Navbar> 
@@ -18,7 +27,12 @@ class App extends Component {
       </Col>
     </Row>
     <Row>
-      <Col className="Chat-box"><h2>Game Chat:</h2></Col>
+      <Col className="Chat-box">
+        <h2>Game Chat:</h2>
+        <div>
+          {chatMessages}
+        </div>
+      </Col>
       <Col xs="6" sm="4" className="Controls"><h2>Controls:</h2></Col>
     </Row>
     <Navbar color="light" light expand="md" className="App-footer"><NavbarBrand>        
