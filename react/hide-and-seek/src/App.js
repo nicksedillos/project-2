@@ -16,45 +16,19 @@ class App extends Component {
     //const chatMessages = chatInfo.map((message, i) => <p key={i}>{message}</p>);
     
     return (
-<<<<<<< HEAD
-    <Container className="App">
-    <Navbar light expand="md" className="App-header"><NavbarBrand>Hide-and-Seek</NavbarBrand></Navbar> 
-    <Row>
-      <Col xs="6" sm="4" className="Scoreboard"><h2>Scoreboard:</h2></Col>
-      <Col className="Game-board">
-        <div>
-          { <img src={gameboardImage} className="Game-image img-fluid" alt="gameboard" /> }
-        </div>
-      </Col>
-    </Row>
-    <Row>
-      <Col className="Chat-box"><h2>Game Chat:</h2></Col>
-      <Col xs="6" sm="4" className="Controls">
-        {/* <input type="image" src="./imgs/arrows/leftArrow.png" alt=""/>
-        <button><img src="./imgs/arrows/upArrow.png" alt=""/></button>
-        <button><img src="./imgs/arrows/downArrow.png" alt=""/></button>
-        <button><img src="./imgs/arrows/rightArrow.png" alt=""/></button> */}
-      <button>"left"</button>
-      <button>"up"</button>
-      <button>"down"</button>
-      <button>"right"</button>
-
-      </Col>
-    </Row>
-    <Navbar color="light" light expand="md" className="App-footer"><NavbarBrand>        
-      <a
-        className="Repo-link"
-        href="https://github.com/nicksedillos/project-2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View the code on Github</a>
-    </NavbarBrand></Navbar>
-=======
     <Container fluid className="App">
       <Navbar light expand="md" className="App-header">Hide-and-Seek</Navbar> 
       <Row>
-        <Col xs="6" sm="4" className="Players"><h2 className="Sub-heading">Players:</h2></Col>
+        <Col xs="6" sm="4" className="Players">
+        <h2 className="Sub-heading">Players:</h2>
+        <form>
+          <label>
+            Name:
+            <input type="text" name="name" />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        </Col>
         <Col className="Game-board">
           <div id="game-container">
             {/* Creating the grid below so the players can play on, don't expand below lel ;) */}
@@ -276,8 +250,26 @@ class App extends Component {
           <div>
             {/* {chatMessages} */}
           </div>
+          <div>
+          <form>
+            <label>
+              Message:
+              <input type="text" name="name" />
+            </label>
+  <input type="submit" value="Submit" />
+</form>
+          </div>
         </Col>
-        <Col xs="6" sm="4" className="Controls"><h2 className="Sub-heading">Controls:</h2></Col>
+        <Col xs="6" sm="4" className="Controls"><h2 className="Sub-heading">Controls:</h2>
+          <button><img src="./imgs/arrows/leftArrow.png" alt="left" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/upArrow.png" alt="up" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/downArrow.png" alt="down" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/rightArrow.png" alt="right" onClick={this.myfunction} /></button>
+        </Col>
+        <script>
+        myfunction() {
+        console.log("CLICKED")}
+        </script>
       </Row>
       <Navbar light expand="md" className="App-footer">
         <NavbarBrand>        
@@ -290,7 +282,6 @@ class App extends Component {
           View the code on Github</a>
         </NavbarBrand>
       </Navbar>
->>>>>>> 0bac558ad0011a12e8daf98858622a9338e8e26d
     </Container>
     );
   }
