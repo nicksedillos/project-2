@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import gameboardImage from './boardstates/board.png'; //image path placeholder
+import gameboardImage from './imgs/boardstates/board.png'; //image path placeholder
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand } from 'reactstrap';
@@ -19,7 +19,17 @@ class App extends Component {
     </Row>
     <Row>
       <Col className="Chat-box"><h2>Game Chat:</h2></Col>
-      <Col xs="6" sm="4" className="Controls"><h2>Controls:</h2></Col>
+      <Col xs="6" sm="4" className="Controls">
+        {/* <input type="image" src="./imgs/arrows/leftArrow.png" alt=""/>
+        <button><img src="./imgs/arrows/upArrow.png" alt=""/></button>
+        <button><img src="./imgs/arrows/downArrow.png" alt=""/></button>
+        <button><img src="./imgs/arrows/rightArrow.png" alt=""/></button> */}
+      <button>"left"</button>
+      <button>"up"</button>
+      <button>"down"</button>
+      <button>"right"</button>
+
+      </Col>
     </Row>
     <Navbar color="light" light expand="md" className="App-footer"><NavbarBrand>        
       <a
