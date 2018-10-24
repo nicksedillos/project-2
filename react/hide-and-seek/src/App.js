@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import gameboardImage from '/placeholder-image.jpg'; //image path placeholder
+import gameboardImage from './boardstates/board.png'; //image path placeholder
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand } from 'reactstrap';
@@ -12,8 +12,9 @@ class App extends Component {
     <Row>
       <Col xs="6" sm="4" className="Scoreboard"><h2>Scoreboard:</h2></Col>
       <Col className="Game-board">
-        <h2>The game board image will go here.</h2>
-        {/* <img src={gameboardImage} className="Game-image" alt="gameboard" /> */}
+        <div>
+          { <img src={gameboardImage} className="Game-image img-fluid" alt="gameboard" /> }
+        </div>
       </Col>
     </Row>
     <Row>
