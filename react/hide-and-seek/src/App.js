@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import gameboardImage from './boardstates/board.png'; //image path placeholder
+import gameboardImage from './imgs/boardstates/board.png'; //image path placeholder
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand } from 'reactstrap';
@@ -19,7 +19,16 @@ class App extends Component {
     <Container fluid className="App">
       <Navbar light expand="md" className="App-header">Hide-and-Seek</Navbar> 
       <Row>
-        <Col xs="6" sm="4" className="Players"><h2 className="Sub-heading">Players:</h2></Col>
+        <Col xs="6" sm="4" className="Players">
+        <h2 className="Sub-heading">Players:</h2>
+        <form>
+          <label>
+            Name:
+            <input type="text" name="name" />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        </Col>
         <Col className="Game-board">
           <div id="game-container">
             {/* Creating the grid below so the players can play on, don't expand below lel ;) */}
@@ -241,8 +250,26 @@ class App extends Component {
           <div>
             {/* {chatMessages} */}
           </div>
+          <div>
+          <form>
+            <label>
+              Message:
+              <input type="text" name="name" />
+            </label>
+  <input type="submit" value="Submit" />
+</form>
+          </div>
         </Col>
-        <Col xs="6" sm="4" className="Controls"><h2 className="Sub-heading">Controls:</h2></Col>
+        <Col xs="6" sm="4" className="Controls"><h2 className="Sub-heading">Controls:</h2>
+          <button><img src="./imgs/arrows/leftArrow.png" alt="left" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/upArrow.png" alt="up" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/downArrow.png" alt="down" onClick={this.myfunction} /></button>
+          <button><img src="./imgs/arrows/rightArrow.png" alt="right" onClick={this.myfunction} /></button>
+        </Col>
+        <script>
+        myfunction() {
+        console.log("CLICKED")}
+        </script>
       </Row>
       <Navbar light expand="md" className="App-footer">
         <NavbarBrand>        
