@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import gameboardImage from './imgs/boardstates/board.png'; //image path placeholder
+import leftArrow from './imgs/arrows/leftArrow.png'; //image path placeholder
+import rightArrow from './imgs/arrows/rightArrow.png'; //image path placeholder
+import upArrow from './imgs/arrows/upArrow.png'; //image path placeholder
+import downArrow from './imgs/arrows/downArrow.png'; //image path placeholder
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand } from 'reactstrap';
+
+function spawn(){console.log(this.state.name)}
+function left(){console.log(left)}
+function right(){console.log(right)}
+function up(){console.log(up)}
+function down(){console.log(down)}
+
 
 class App extends Component {
   // componentDidMount() {
@@ -26,7 +37,8 @@ class App extends Component {
             Name:
             <input type="text" name="name" />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" onSubmit={spawn}/>
+          
         </form>
         </Col>
         <Col className="Game-board">
@@ -261,15 +273,22 @@ class App extends Component {
           </div>
         </Col>
         <Col xs="6" sm="4" className="Controls"><h2 className="Sub-heading">Controls:</h2>
-          <button><img src="./imgs/arrows/leftArrow.png" alt="left" onClick={this.myfunction} /></button>
-          <button><img src="./imgs/arrows/upArrow.png" alt="up" onClick={this.myfunction} /></button>
-          <button><img src="./imgs/arrows/downArrow.png" alt="down" onClick={this.myfunction} /></button>
-          <button><img src="./imgs/arrows/rightArrow.png" alt="right" onClick={this.myfunction} /></button>
+          <button className="left">
+          { <img src={leftArrow} className="img-fluid" alt="left" onClick={left} /> } 
+          </button>
+
+          <button className="up">
+          { <img src={upArrow} className="img-fluid" alt="up" onClick={up} /> } 
+          </button>
+
+          <button className="down">
+          { <img src={downArrow} className="img-fluid" alt="Down" onClick={down} /> }
+          </button>
+
+          <button className="right">
+            { <img src={rightArrow} className="img-fluid" alt="right" onClick={right} /> }
+          </button>
         </Col>
-        <script>
-        myfunction() {
-        console.log("CLICKED")}
-        </script>
       </Row>
       <Navbar light expand="md" className="App-footer">
         <NavbarBrand>        
