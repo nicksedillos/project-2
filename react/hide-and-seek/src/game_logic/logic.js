@@ -81,7 +81,7 @@ getZombieVision = player => {
 };
 
 getNormalVision = player => {
-  console.log("Calculating normal vision");
+  console.log("\nCalculating normal vision...\n");
   // current position pushed to the array right away
   player.vision.push(player.position);
   let currentPositionArray = player.position.split(",");
@@ -104,26 +104,42 @@ getNormalVision = player => {
   console.log([player]); /* testing purpose */
 };
 
+renderFog = player => {
+  console.log('\nDetermining fog...\n');
+  let fog = [];
+  for (let i = 1; i < 18; i++) {
+    for (let j = 1; j < 13; j++) {
+      if ( !(player.vision).includes(`${i},${j}`) ) {
+        fog.push(`${i},${j}`);
+      }
+    }
+  }
+  console.log(fog);
+}
+
 renderVision = player => {
   // if they are a zombie
   if (player.infected === true) {
     let currentPosition = player.position;
     // should update player.vision
     getZombieVision(player);
+    renderFog(player);
     // else they are a player
   } else {
     let currentPosition = player.position;
     // should update the player.vision
     getNormalVision(player);
+    renderFog(player);
   }
 };
 
-// created bob for testing purposes
-var player = {
-  name: "Bob",
+/* created bob for testing purposes */
+var player1 = {
+  name: 'Bob',
   infected: false,
-  position: "9,7",
+  position: '1,1',
   vision: []
 };
 
-renderVision(player);
+/* testing purposes */
+renderVision(player1);
